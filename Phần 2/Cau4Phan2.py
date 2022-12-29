@@ -28,7 +28,7 @@ def ve_do_thi_1(x,y):
     x, y = np.meshgrid(x, y)
     z = do_thi_yen_ngua(x,y)
     fig, ax = plt.subplots(subplot_kw={"projection":"3d"})
-    rosen_surf = ax.plot_surface(x, y,z,cmap=cm.gist_heat_r,linewidth=0, antialiased=False)
+    rosen_surf = ax.plot_surface(x, y,z,cmap=cm.viridis,linewidth=0, antialiased=False)
     fig.colorbar(rosen_surf, shrink=0.5,aspect=5)
     plt.show()
     
@@ -37,9 +37,9 @@ def ve_do_thi_2(x,y):
     z1 = do_thi_mat_hyperbolic_1(x,y)
     z2 = do_thi_mat_hyperbolic_2(x,y)
     fig, ax = plt.subplots(subplot_kw={"projection":"3d"})
-    rosen_surf_1 = ax.plot_surface(x, y,z1, cmap=cm.gist_heat_r,linewidth=0, antialiased=False)
+    rosen_surf_1 = ax.plot_surface(x, y,z1, cmap=cm.viridis,linewidth=0, antialiased=False)
     fig.colorbar(rosen_surf_1, shrink=0.5,aspect=5)
-    rosen_surf_2 = ax.plot_surface(x, y,z2, cmap=cm.gist_heat_r,linewidth=0, antialiased=False)
+    rosen_surf_2 = ax.plot_surface(x, y,z2, cmap=cm.viridis,linewidth=0, antialiased=False)
     fig.colorbar(rosen_surf_2, shrink=0.5,aspect=5)
     plt.show()
     
@@ -48,9 +48,9 @@ def ve_do_thi_3(x,y):
     z1 = do_thi_mat_cau_1(x,y)
     z2 = do_thi_mat_cau_2(x,y)
     fig, ax = plt.subplots(subplot_kw={"projection":"3d"})
-    rosen_surf_1 = ax.plot_surface(x, y,z1, cmap=cm.gist_heat_r,linewidth=0, antialiased=False)
+    rosen_surf_1 = ax.plot_surface(x, y,z1, cmap=cm.viridis,linewidth=0, antialiased=False)
     fig.colorbar(rosen_surf_1, shrink=0.5,aspect=5)
-    rosen_surf_2 = ax.plot_surface(x, y,z2, cmap=cm.gist_heat_r,linewidth=0, antialiased=False)
+    rosen_surf_2 = ax.plot_surface(x, y,z2, cmap=cm.viridis,linewidth=0, antialiased=False)
     fig.colorbar(rosen_surf_2, shrink=0.5,aspect=5)
     plt.show()
     

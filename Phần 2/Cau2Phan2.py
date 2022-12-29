@@ -33,15 +33,15 @@ def tinh_tich_phan():
     return answer
 def main():
     a = giai_he_phuong_trinh()
-    print (a)
+    print ("Kết quả hệ phương trình: ",a)
     b = tinh_gioi_han()
-    print (b)
+    print ("Kết quả tính giới hạn: ",b)
     c = tinh_dao_ham()
-    print (c)
+    print ("Kết quả tính đạo hàm: ",c)
     d = tinh_nguyen_ham()
-    print (d)
-    e = tinh_tich_phan
-    print (e)
+    print ("Kết quả tính nguyên hàm: ",d)
+    e = tinh_tich_phan()
+    print ("Kết quả tính tích phân: ",e)
     
 
 if __name__ == "__main__":

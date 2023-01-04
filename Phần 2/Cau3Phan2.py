@@ -9,51 +9,40 @@ def ham_bac_4(a,b,c,x):
 def dao_ham_bac_1():
     x = symbols('x')
     y1 = diff(ham_bac_4(1,-2,-3,x),x)
+    print("Kết quả đạo hàm bậc 1: ",y1)
     return y1
 def dao_ham_bac_2():
     x = symbols('x')
     y1 = diff(diff(ham_bac_4(1,-2,-3,x),x),x)
+    print("Kết quả đạo hàm bậc 2: ",y1)
     return y1
 def dao_ham_bac_3():
     x = symbols('x')
     y1 = diff(diff(diff(ham_bac_4(1,-2,-3,x),x),x),x)
+    print("Kết quả đạo hàm bậc 3: ",y1)
     return y1
-
-def ve_do_thi_cach_1():
-    x = symbols('x')
-    y1 = plot(
-        ham_bac_4(1,-2,-3,x), 
-        diff(ham_bac_4(1,-2,-3,x),x), 
-        diff(diff(ham_bac_4(1,-2,-3,x),x),x), 
-        diff(diff(diff(ham_bac_4(1,-2,-3,x),x),x),x),
-        (x, -10, 10), title = "Đồ Thị y và đạo hàm các bậc của nó", ylabel = "Trục tung", xlabel = "Trục hoành",legend = True)
-    return y1
-
+dao_ham_bac_1()
+dao_ham_bac_2()
+dao_ham_bac_3()
 
 def ve_do_thi_1(a,b,c):
-    x = np.linspace(-10, 10, 100)
+    x = np.linspace(-10, 10, 30)
     fig, ax = plt.subplots()
     y1 = ham_bac_4(1,-2,-3,x)
     y2 = a(x)
     y3 = b(x)
     y4 = c(x)
-    ax.plot(x,y1,label = dao_ham_bac_1(),linestyle='--')
-    ax.plot(x,y2,label = "hj",linestyle='dashdot')
-    ax.plot(x,y3,label = "hjg",linestyle=(0, (3, 1, 1, 1)))
-    ax.plot(x,y4,label = "hjf",linestyle=(0, (3, 10, 1, 10, 1, 10)))
+    ax.plot(x,y1,label = r'$y = x^{4}-2x^{2}-3$',marker=10)
+    ax.plot(x,y2,label = r'$y^{1} = 4x^{3}-4x$',marker=7)
+    ax.plot(x,y3,label = r'$y^{2} = 12x^{2}-4$',marker=6)
+    ax.plot(x,y4,label = r'$y^{3} = 24x$',marker=1)
     ax.set_xlabel('Trục hoành x')
     ax.set_ylabel('Trục tung y')
-    ax.set_title("Đồ thị phương trình y và đạo hàm")
+    ax.set_title("Đồ thị phương trình y và các đạo hàm bậc 1, 2, 3")
     ax.legend()
     plt.show()
 def main():
-    
-    #ve_do_thi()
-    #dao_ham_bac_2()
-    #dao_ham_bac_3()
-    #ve_do_thi_1(lambda x: 4*x**3 - 4*x, lambda x2:12*x2**2 - 4, lambda x3: 24*x3)
-    ve_do_thi_cach_1()
-    
+    ve_do_thi_1(lambda x: 4*x**3 - 4*x, lambda x2:12*x2**2 - 4, lambda x3: 24*x3)   
 if __name__ == "__main__":
     main()
 
